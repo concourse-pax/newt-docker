@@ -1,4 +1,4 @@
-FROM ubuntu:bionic
+FROM ubuntu:xenial
 MAINTAINER runtime.io <contact@runtime.io>
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -8,7 +8,7 @@ ARG JLINK_RELEASE
 # gcc-arm-embedded is pulled from ppa:team-gcc-arm-embedded/ppa
 RUN apt-get update && \
     apt-get install -y gnupg && \
-    echo 'deb http://ppa.launchpad.net/team-gcc-arm-embedded/ppa/ubuntu bionic main ' > /etc/apt/sources.list.d/gcc-arm-embedded.list && \
+    echo 'deb http://ppa.launchpad.net/team-gcc-arm-embedded/ppa/ubuntu xenial main ' > /etc/apt/sources.list.d/gcc-arm-embedded.list && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0xD1FAA6ECF64D33B0 && \
     apt-get update && \
     apt-get install -y sudo \
